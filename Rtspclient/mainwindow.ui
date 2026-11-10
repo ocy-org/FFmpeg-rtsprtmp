@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>460</width>
+    <height>260</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Qt + FFmpeg 摄像头 RTSP 推流</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="cameraLabel">
+        <property name="text">
+         <string>摄像头设备名：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="cameraEdit">
+        <property name="text">
+         <string>USB2.0 HD UVC WebCam</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="rtspLabel">
+        <property name="text">
+         <string>推流地址：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="rtspEdit">
+        <property name="text">
+         <string>rtsp://127.0.0.1:8554/live</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="resLabel">
+        <property name="text">
+         <string>分辨率：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="resCombo">
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <item><property name="text"><string>自动</string></property></item>
+        <item><property name="text"><string>640x480</string></property></item>
+        <item><property name="text"><string>320x240</string></property></item>
+        <item><property name="text"><string>352x288</string></property></item>
+        <item><property name="text"><string>176x144</string></property></item>
+        <item><property name="text"><string>160x120</string></property></item>
+        <item><property name="text"><string>1280x720</string></property></item>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="fmtLabel">
+        <property name="text">
+         <string>像素格式：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="fmtCombo">
+        <item><property name="text"><string>自动</string></property></item>
+        <item><property name="text"><string>MJPEG（720p 建议）</string></property></item>
+        <item><property name="text"><string>YUY2（无损低延迟）</string></property></item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="buttonLayout">
+      <item>
+       <widget class="QPushButton" name="startBtn">
+        <property name="text">
+         <string>开始推流</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopBtn">
+        <property name="text">
+         <string>停止推流</string>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="statusLabel">
+      <property name="text">
+       <string>就绪（请先启动 mediamtx）</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
